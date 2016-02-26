@@ -47,7 +47,6 @@ $.fn.Slideshow = function(args){
 	}
 	
 	function setTo(i){
-		console.log(self.currentSlide+" -> "+i);
 		changePager(i);
 		changeSlide(i);
 		self.currentSlide=parseInt(i);
