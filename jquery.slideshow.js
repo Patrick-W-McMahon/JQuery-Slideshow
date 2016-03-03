@@ -23,10 +23,9 @@ $.fn.Slideshow = function(args){
 			});
 			var paganator = getPaganator(cnt);
 			slides.each(function(index){
+				var typeT = "hidden";
 				if(index==0){
-					var typeT = "active";
-				}else{
-					var typeT = "hidden";
+					typeT = "active";
 				}
 				var acp = ac['pager'],pager = $(acp['elm']).appendTo(paganator);
 				pager.addClass(acp["class"][typeT]);
