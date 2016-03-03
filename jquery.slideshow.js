@@ -4,11 +4,11 @@ $.fn.Slideshow = function(args){
 	var playState=true;
 	var slides = getSlides(this,args['slides']['selectorType'],args['slides']['selector']);
 	var controls = buildControls(this, args);
-	autoPlay();
 	var anSpeed = "slow";
 	if(isObj(args['animationSpeed'])){
 		anSpeed=args['animationSpeed'];
 	}
+	autoPlay();
 	
 	function buildControls(sliderShow, args){
 		if(isObj(args["controls"])){
