@@ -12,12 +12,12 @@ $.fn.Slideshow = function(args){
 	
 	function buildControls(sliderShow, args){
 		if(typeof(args["controls"])!==undefined){
-			var cnt = $("."+args['controls']['selector']);
-			var prvBtn = $(args['controls']['prvBtn']).appendTo(cnt);
+			var ac = args['controls'],cnt = $("."+ac['selector']);
+			var prvBtn = $(ac['prvBtn']).appendTo(cnt);
 			prvBtn.click(function(){
 				self.prev()
 			});
-			var nextBtn = $(args['controls']['nextBtn']).appendTo(cnt);
+			var nextBtn = $(ac['nextBtn']).appendTo(cnt);
 			nextBtn.click(function(){
 				self.next();
 			});
@@ -28,8 +28,8 @@ $.fn.Slideshow = function(args){
 				}else{
 					var typeT = "hidden";
 				}
-				var pager = $(args['controls']['pager']['elm']).appendTo(paganator);
-				pager.addClass(args['controls']['pager']["class"][typeT]);
+				var acp = ac['pager'],pager = $(acp['elm']).appendTo(paganator);
+				pager.addClass(acp["class"][typeT]);
 				pager.attr("index",index);
 				pager.click(function(){
 					setTo($(this).attr("index"));
