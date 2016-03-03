@@ -84,13 +84,14 @@ $.fn.Slideshow = function(args){
 	
 	function changePager(selected){
 		var pagers = controls.children("nav").children("i");
+		var cpc = args['controls']['pager']['class'];
 		pagers.each(function(){
-			if($(this).hasClass(args['controls']['pager']["class"]["active"])){
+			if($(this).hasClass(cpc["active"])){
 				self.currentSlide = $(this).attr("index");
-				$(this).removeClass(args['controls']['pager']['class']['active']).addClass(args['controls']['pager']['class']['hidden']);
+				$(this).removeClass(cpc['active']).addClass(cpc['hidden']);
 			}
 		});
-		$(pagers.get(selected)).removeClass(args['controls']['pager']['class']['hidden']).addClass(args['controls']['pager']['class']['active']);
+		$(pagers.get(selected)).removeClass(cpc['hidden']).addClass(cpc['active']);
 	}
 	
 	function getPaganator(controls_element){
