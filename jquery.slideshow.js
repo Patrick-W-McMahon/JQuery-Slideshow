@@ -6,12 +6,12 @@ $.fn.Slideshow = function(args){
 	var controls = buildControls(this, args);
 	autoPlay();
 	var anSpeed = "slow";
-	if(typeof(args['animationSpeed'])!= "undefined"){
+	if(isObj(args['animationSpeed'])){
 		anSpeed=args['animationSpeed'];
 	}
 	
 	function buildControls(sliderShow, args){
-		if(typeof(args["controls"])!==undefined){
+		if(isObj(args["controls"])){
 			var ac = args['controls'],cnt = $("."+ac['selector']);
 			var prvBtn = $(ac['prvBtn']).appendTo(cnt);
 			prvBtn.click(function(){
@@ -41,7 +41,7 @@ $.fn.Slideshow = function(args){
 	}
 	
 	function autoPlay(){
-		if(typeof(args['playInterval'])!==undefined){
+		if(isObj(args['playInterval'])){
 			play(args['playInterval']);
 		}else{
 			play(8000);
@@ -100,6 +100,10 @@ $.fn.Slideshow = function(args){
 		var p = document.createElement('nav');
 		controls_element.append(p);
 		return $(p);
+	}
+	
+	function isObj(t){
+		return typeof(t)!==undefined;
 	}
 	
 	function getSlides(slideShow,selType,sel){
