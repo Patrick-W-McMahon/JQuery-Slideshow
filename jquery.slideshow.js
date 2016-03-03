@@ -5,6 +5,10 @@ $.fn.Slideshow = function(args){
 	var slides = getSlides(this,args['slides']['selectorType'],args['slides']['selector']);
 	var controls = buildControls(this, args);
 	autoPlay();
+	var anSpeed = "slow";
+	if(typeof(args['animationSpeed'])!= "undefined"){
+		anSpeed=args['animationSpeed'];
+	}
 	
 	function buildControls(sliderShow, args){
 		if(typeof(args["controls"])!==undefined){
@@ -17,21 +21,19 @@ $.fn.Slideshow = function(args){
 			nextBtn.click(function(){
 				self.next();
 			});
-			var paganator = $(document.createElement('nav'));
-			paganator.appendTo(cnt);
+			var paganator = getPaganator(cnt);
 			slides.each(function(index){
 				if(index==0){
 					var typeT = "active";
 				}else{
 					var typeT = "hidden";
 				}
-				var pager = $(args['controls']['pager']['elm']);
+				var pager = $(args['controls']['pager']['elm']).appendTo(paganator);
 				pager.addClass(args['controls']['pager']["class"][typeT]);
 				pager.attr("index",index);
 				pager.click(function(){
 					setTo($(this).attr("index"));
 				});
-				paganator.append(pager);
 			});
 			return cnt;
 		}
@@ -77,8 +79,8 @@ $.fn.Slideshow = function(args){
 	
 	function changeSlide(selected){
 		if(self.currentSlide != selected){
-			$(slides.get(self.currentSlide)).fadeOut("slow");
-			$(slides.get(selected)).fadeIn("slow");	
+			$(slides.get(self.currentSlide)).fadeOut(anSpeed);
+			$(slides.get(selected)).fadeIn(anSpeed);	
 		}
 	}
 	
@@ -99,12 +101,6 @@ $.fn.Slideshow = function(args){
 		controls_element.append(p);
 		return $(p);
 	}
-	
-	function getControls(slideShow,selType,sel){
-		var results;
-		results = slideShow.children(sel);
-		return results;
-	}	
 	
 	function getSlides(slideShow,selType,sel){
 		var results;
