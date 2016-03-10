@@ -11,7 +11,8 @@ $( document ).ready(function() {
 					active:"fa-circle",
 					hidden:"fa-circle-o"
 				},
-				elm:"<i class='fa'></i>"
+				elm:"<i class='fa'></i>",
+				containerElm:"nav",
 			},
 			selectorType:"class",//could also be id or elm
 			selector:"control-panel"
