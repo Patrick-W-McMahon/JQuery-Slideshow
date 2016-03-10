@@ -38,7 +38,7 @@
 		}
 		var settings = $.extend( {}, defaults, args );
 		var slides = getSlides(this,settings.slides.selectorType,settings.slides.selector);
-		var controls = buildControls(this, args);
+		var controls = buildControls();
 		this.start = function(){
 			state=true;
 			loop(settings.playInterval);
@@ -52,7 +52,7 @@
 			self.start();
 		}
 		
-		function buildControls(sliderShow, args){
+		function buildControls(){
 			if(settings.controls){
 				var ac = settings.controls,cnt = $("."+settings.controls.selector);
 				var prvBtn = $(ac.prvBtn).appendTo(cnt);
@@ -63,7 +63,7 @@
 				nextBtn.click(function(){
 					self.next();
 				});
-				var paganator = getPaganator(cnt,ac.pager.containerElm);
+				var paganator = getPaganator(cnt,settings.controls.pager.containerElm);
 				slides.each(function(index){
 					var typeT = "hidden";
 					if(index==0){
@@ -93,15 +93,17 @@
 		}
 		
 		this.setTo = function(i){
-			var pagers = controls.children(settings.controls.pager.containerElm).children();
-			var cpc = settings.controls.pager.class;
-			pagers.each(function(){
-				if($(this).hasClass(cpc.active)){
-					currentSlide = $(this).attr("index");
-					$(this).removeClass(cpc.active).addClass(cpc.hidden);
-				}
-			});
-			$(pagers.get(i)).removeClass(cpc.hidden).addClass(cpc.active);
+			if(settings.controls){
+				var pagers = controls.children(settings.controls.pager.containerElm).children();
+				var cpc = settings.controls.pager.class;
+				pagers.each(function(){
+					if($(this).hasClass(cpc.active)){
+						currentSlide = $(this).attr("index");
+						$(this).removeClass(cpc.active).addClass(cpc.hidden);
+					}
+				});
+				$(pagers.get(i)).removeClass(cpc.hidden).addClass(cpc.active);
+			}
 			if(currentSlide != i){
 				settings.effect(slides,currentSlide,settings,i);
 			}
