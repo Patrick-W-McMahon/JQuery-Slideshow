@@ -8,7 +8,7 @@
 			onPreviousSlide:function(){},
 			onSlideChange:function(){},
 			onSlideJump:function(){},
-			animateSpeed: "slow",
+			animateSpeed:"slow",
 			onload_play:true,
 			playInterval:8000,
 			slides:{
@@ -16,16 +16,17 @@
 				selector:"a"
 			},
 			controls:{
-				prvBtn:"<i class='fa fa-chevron-left'></i>",
-				nextBtn:"<i class='fa fa-chevron-right'></i>",
-				pauseBtn:"<i class='fa fa-pause'></i>",
-				playBtn:"<i class='fa fa-play'></i>",
+				prvBtn:"<button>&#60;</button>",
+				nextBtn:"<button>&#62;</button>",
+				pauseBtn:"<button>pause</button>",
+				playBtn:"<button>play</button>",
 				pager:{
 					class:{
-						active:"fa-circle",
-						hidden:"fa-circle-o"
+						active:"active",
+						hidden:"not-active"
 					},
-					elm:"<i class='fa'></i>"
+					elm:"<button>#</button>",
+					containerElm:"nav",
 				},
 				selectorType:"class",
 				selector:"control-panel"
@@ -58,7 +59,7 @@
 				nextBtn.click(function(){
 					self.next();
 				});
-				var paganator = getPaganator(cnt);
+				var paganator = getPaganator(cnt,ac.pager.containerElm);
 				slides.each(function(index){
 					var typeT = "hidden";
 					if(index==0){
@@ -88,7 +89,7 @@
 		}
 		
 		this.setTo = function(i){
-			var pagers = controls.children("nav").children("i");
+			var pagers = controls.children(settings.controls.pager.containerElm).children();
 			var cpc = settings.controls.pager.class;
 			pagers.each(function(){
 				if($(this).hasClass(cpc.active)){
@@ -136,8 +137,8 @@
 		return this;
 	};
 	
-	function getPaganator(controls_element){
-		var p = document.createElement('nav');
+	function getPaganator(controls_element, container){
+		var p = document.createElement(container);
 		controls_element.append(p);
 		return $(p);
 	}	
