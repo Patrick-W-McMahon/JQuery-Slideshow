@@ -11,6 +11,10 @@
 			animateSpeed:"slow",
 			onload_play:true,
 			playInterval:8000,
+			effect:function(slides,currentSlide,settings,nextSlideIndex){
+				$(slides.get(currentSlide)).fadeOut(settings.animateSpeed);
+				$(slides.get(nextSlideIndex)).fadeIn(settings.animateSpeed);	
+			},
 			slides:{
 				selectorType:"elm",
 				selector:"a"
@@ -99,8 +103,7 @@
 			});
 			$(pagers.get(i)).removeClass(cpc.hidden).addClass(cpc.active);
 			if(currentSlide != i){
-				$(slides.get(currentSlide)).fadeOut(settings.animateSpeed);
-				$(slides.get(i)).fadeIn(settings.animateSpeed);	
+				settings.effect(slides,currentSlide,settings,i);
 			}
 			currentSlide=parseInt(i);
 			settings.onSlideChange.call(this.getSlide(i));
