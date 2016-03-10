@@ -10,3 +10,5 @@ You can fully customize the settings.
 
 
 Custom effects plugins can be made for JQuery-Slideshow to make an unlimited amount of slide effects.
+to make your own effect use the callback function "effect(slides,currentSlide,settings,nextSlideIndex){}"
+with this you can create your own effect. 
