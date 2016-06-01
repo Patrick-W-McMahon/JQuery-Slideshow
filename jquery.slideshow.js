@@ -116,19 +116,13 @@
 		}
 		
 		this.next = function(){
-			var s=parseInt(currentSlide)+1;
-			if(s>slides.length-1){
-				s=0;
-			}
+			var s = (parseInt(currentSlide)+1>slides.length-1 ? 0 : parseInt(currentSlide)+1);
 			self.setTo(s);
 			settings.onNextSlide.call(this.getSlide(s));
 		}
 		
 		this.prev = function(){
-			var s=parseInt(currentSlide)-1;
-			if(s<0){
-				s=slides.length-1;
-			}
+			var s = (parseInt(currentSlide)-1<0 ? slides.length-1 : parseInt(currentSlide)-1);
 			self.setTo(s);
 			settings.onPreviousSlide.call(this.getSlide(s));
 		}
