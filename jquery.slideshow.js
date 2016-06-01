@@ -65,10 +65,7 @@
 				});
 				var paganator = getPaganator(cnt,settings.controls.pager.containerElm);
 				slides.each(function(index){
-					var typeT = "hidden";
-					if(index==0){
-						typeT = "active";
-					}
+					var typeT = (index == 0 ? "active" : "hidden");
 					var acp = ac.pager,pager = $(acp.elm).appendTo(paganator);
 					pager.addClass(acp.class[typeT]);
 					pager.attr("index",index);
