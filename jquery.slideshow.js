@@ -109,10 +109,7 @@
 		}
 		
 		this.getSlide = function(i){
-			if(i<0||i>slides.length){
-				return undefined;
-			}
-			return slides.get(i)
+			return (i<0||i>slides.length ? undefined : slides.get(i));
 		}
 		
 		this.next = function(){
@@ -138,5 +135,4 @@
 		controls_element.append(p);
 		return $(p);
 	}	
-		
 }( jQuery ));
