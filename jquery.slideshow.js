@@ -96,9 +96,7 @@
 				});
 				$(pagers.get(i)).removeClass(cpc.hidden).addClass(cpc.active);
 			}
-			if(currentSlide != i){
-				settings.effect(slides,currentSlide,settings,i);
-			}
+			currentSlide != i && settings.effect(slides,currentSlide,settings,i);
 			currentSlide=parseInt(i);
 			settings.onSlideChange.call(this.getSlide(i));
 		}
