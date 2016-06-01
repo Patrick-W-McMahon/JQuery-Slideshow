@@ -44,13 +44,8 @@
 			loop(settings.playInterval);
 		}
 		
-		this.stop = function(){
-			state=false;
-		}
-		
-		if(settings.onload_play){
-			self.start();
-		}
+		this.stop = function(){state=false;}
+		if(settings.onload_play) self.start();
 		
 		function buildControls(){
 			if(settings.controls){
