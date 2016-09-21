@@ -6,6 +6,9 @@ A JQuery Slideshow plugin
 Overview
 ========
 Highly scalable and responsive slideshow plugin for JQuery.
+JQuery-Slideshow is a responsive slideshow plug-in for jQuery (1.7.1+) with features like CSS3 transitions. Give it a try and check out the examples to help you get started adding JQuery-Slideshow to your project.
+
+
 
 
 [![Click here to lend your support to JQuery-Slideshow and make a donation at pledgie.com!](https://pledgie.com/campaigns/32610.png?skin_name=chrome)](https://pledgie.com/campaigns/32610)
