@@ -29,7 +29,7 @@ Call an instance of a slideshow.
 
 Requirements
 ============
- - JQuery
+ - jQuery (1.7.1+)
 
 Installation
 ============
