@@ -5,8 +5,7 @@ A JQuery Slideshow plugin
 
 Overview
 ========
-This slideshow is fully compatible with font awesome
-https://fortawesome.github.io/Font-Awesome/icons/
+Highly scalable and responsive slideshow plugin for JQuery.
 
 
 [![Click here to lend your support to JQuery-Slideshow and make a donation at pledgie.com!](https://pledgie.com/campaigns/32610.png?skin_name=chrome)](https://pledgie.com/campaigns/32610)
@@ -32,6 +31,11 @@ Fully Customizable
 Custom effects plugins can be made for JQuery-Slideshow to make an unlimited amount of slide effects.
 to make your own effect use the callback function "effect(slides,currentSlide,settings,nextSlideIndex){}"
 with this you can create your own effect. 
+
+Font Awesome Compatable
+--------------
+This slideshow is fully compatible with font awesome
+https://fortawesome.github.io/Font-Awesome/icons/
 
 
 License
