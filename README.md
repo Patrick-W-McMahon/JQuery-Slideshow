@@ -14,6 +14,16 @@ Quickstart
 ==========
 See the examples folder to see different ways of using the JQuery Slideshow plugin
 
+Include the plugin.
+
+    <script src="../../jquery.slideshow.js"></script>
+
+Call an instance of a slideshow.
+
+    $(document).ready(function() {
+     $(".slideshow").Slideshow();
+    });
+
 Requirements
 ============
  - JQuery
