@@ -3,3 +3,6 @@ Copyright 2016 The Apache Software Foundation
 
 This software was created by Patrick W. McMahon
 Please include reference/credit to creator and notice of creators work.
+
+When being used for a website this file simply needs to be included with the server side application code. 
+This file doesn't need to be sent to the browser.
