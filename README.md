@@ -53,7 +53,7 @@ https://fortawesome.github.io/Font-Awesome/icons/
 
 License
 =======
-Apache License v2 
+Apache License v2 - just include the Notice doc and you will be good.
 
 
 
