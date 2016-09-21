@@ -1,4 +1,4 @@
-# JQuery-Slideshow
+JQuery-Slideshow
 ==========
 A JQuery Slideshow plugin
 
