@@ -1,7 +1,9 @@
 # JQuery-Slideshow
 A JQuery Slideshow plugin
 
-This slideshow is fully compatable with font awesome
+[![Click here to lend your support to JQuery-Slideshow and make a donation at pledgie.com!](https://pledgie.com/campaigns/32610.png?skin_name=chrome)](https://pledgie.com/campaigns/32610)
+
+This slideshow is fully compatible with font awesome
 https://fortawesome.github.io/Font-Awesome/icons/
 
 See the examples folder to see different ways of using the JQuery Slideshow plugin
